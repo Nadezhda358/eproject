@@ -11,4 +11,5 @@ public class Interest {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String interestName;
+    //снимка
 }

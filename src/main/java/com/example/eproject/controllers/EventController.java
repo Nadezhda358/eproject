@@ -36,4 +36,10 @@ public class EventController {
         eventRepository.save(event);
         return "organization-events";
     }
+    @GetMapping("/all-events")
+    public String getAllAEvents(Model model){
+        Iterable<Event> events = eventRepository.findAll();
+        model.addAttribute("events", events);
+        return "all-events";
+    }
 }

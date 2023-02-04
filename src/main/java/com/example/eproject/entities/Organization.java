@@ -11,27 +11,9 @@ public class Organization {
     private String address;
     private String description;
     private String email;
-    private String phone;
+    private String phoneNumber;
     private boolean isVerified;
 
-    public Organization(Integer id, String title, String address, String description, String email, String phone, boolean isVerified) {
-        this.id = id;
-        this.title = title;
-        this.address = address;
-        this.description = description;
-        this.email = email;
-        this.phone = phone;
-        this.isVerified = isVerified;
-    }
-    public Organization() {
-        this.id = 0;
-        this.title = "exampleCompany";
-        this.address = "unknown";
-        this.description = "greatest test company";
-        this.email = "testEmail@abv.bg";
-        this.phone = "012391313";
-        this.isVerified = false;
-    }
 
     public Integer getId() {
         return id;
@@ -73,12 +55,12 @@ public class Organization {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public boolean isVerified() {

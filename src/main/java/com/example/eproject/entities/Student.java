@@ -28,7 +28,16 @@ public class Student {
     @Size(min=2, max=300)
     private String description;
     //photo
+    @Size(min=2, max=30)
+    private String town;
 
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
 
     public Integer getId() {
         return id;

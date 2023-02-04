@@ -4,8 +4,11 @@ import jakarta.persistence.*;
 
 @Entity
 public class StudentInterest {
-    @ManyToMany
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @ManyToOne
     private Interest interest;
-    @ManyToMany
+    @ManyToOne
     private Student student;
 }

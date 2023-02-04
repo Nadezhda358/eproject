@@ -1,6 +1,7 @@
 package com.example.eproject.entities;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -15,10 +16,18 @@ public class Event {
     private Organization organization;
     private String eventTitle;
     private String eventDescription;
+    @DateTimeFormat(pattern = "dd-mm-yyyy")
     private Date postDate;
+    @DateTimeFormat(pattern = "dd-mm-yyyy")
+    private Date endDate;
+    private String eventLink;
+    private String place;
+    //период на провеждане
+
     //@ManyToOne
     //OpportunityType opportunityType;
     private String opportunity;
+
     public Integer getId() {
         return id;
     }

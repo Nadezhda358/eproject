@@ -14,7 +14,7 @@
 <body>
 <div class="navdiv">
     <ul>
-        <li><a class="active" href="organization-events">Вашите събития</a></li>
+        <li><a class="active" href="/organization/your-events">Вашите събития</a></li>
         <li><a href="/event/create">Добави събитие</a></li>
         <li><a href="/event/all-events">Всички събития</a></li>
         <li><a href="#">Младежи</a></li>
@@ -31,10 +31,12 @@
                 <div class="card-body">
                     <h5 class="card-title" th:text="${event.eventTitle}"></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-outline-primary">Още</a>
+                    <!--<a href="#" class="btn btn-outline-primary">Още</a>-->
+                    <form th:action="@{/event/more-info/{eventId}(eventId=${event.id})}" method="post">
+                        <input type="submit" name="more" value="Още" class="btn btn-outline-primary">
+                    </form>
                 </div>
             </div>
-            <br>
         </div>
     </div>
 </div>

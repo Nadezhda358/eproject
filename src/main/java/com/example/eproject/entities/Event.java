@@ -92,4 +92,18 @@ public class Event {
     public void setPlace(String place) {
         this.place = place;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", organization=" + organization +
+                ", eventTitle='" + eventTitle + '\'' +
+                ", eventDescription='" + eventDescription + '\'' +
+                ", postDate=" + postDate +
+                ", endDate=" + endDate +
+                ", eventLink='" + eventLink + '\'' +
+                ", place='" + place + '\'' +
+                '}';
+    }
 }

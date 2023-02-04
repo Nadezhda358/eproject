@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -41,5 +43,10 @@ public class EventController {
         Iterable<Event> events = eventRepository.findAll();
         model.addAttribute("events", events);
         return "all-events";
+    }
+    @PostMapping("/more-info/{eventId}")
+    private String moreMoreInfo(@PathVariable(name="eventId") Integer eventId, Model model) {
+        model.addAttribute("event", eventRepository.findById(eventId));
+        return "event-info";
     }
 }

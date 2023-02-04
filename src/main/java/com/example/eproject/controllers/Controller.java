@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-    @GetMapping
+    @GetMapping("/choose-role")
     public String chooseRole(Model model){
         return "index";
     }

@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Students {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -20,7 +21,8 @@ public class Student {
     private String secondName;
     @Size(min=2, max=30)
     private String lastName;
-    @Past
+    //@Past
+    //@DateTimeFormat(pattern = "dd-mm-yyyy")
     private Date birthDay;
     @Email
     private String email;

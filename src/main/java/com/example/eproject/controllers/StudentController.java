@@ -22,7 +22,8 @@ public class StudentController {
             return "create";
         }
         studentRepository.save(student);
-        return "redirect:/student-events";
+        //return "redirect:/student-events";
+        return "redirect:/choose-role";
     }
     @GetMapping("/create")
     private String createStudent(Model model) {

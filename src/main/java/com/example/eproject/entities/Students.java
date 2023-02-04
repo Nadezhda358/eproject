@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Date;
+
 @Entity
 public class Students {
     @Id
@@ -14,7 +16,8 @@ public class Students {
     private String secondName;
     private String lastName;
     //private datetime birthDay;
+    private Date date;
     private String description;
     //photo
-    
+
 }

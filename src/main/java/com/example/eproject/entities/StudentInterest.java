@@ -1,13 +1,11 @@
 package com.example.eproject.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class StudentInterest {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idInterest;
+    @ManyToMany
+    private Interest interest;
+    @ManyToMany
+    private Student student;
 }

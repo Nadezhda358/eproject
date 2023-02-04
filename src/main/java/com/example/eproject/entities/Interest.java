@@ -9,5 +9,6 @@ import jakarta.persistence.Id;
 public class Interest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String interestName;
 }

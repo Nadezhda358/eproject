@@ -20,6 +20,7 @@
             <p th:if="${#fields.hasErrors('secondName')}" th:errors="*{secondName}" class="text-danger">Second name error</p>
             <p>Last name: <input type="text" th:field="*{lastName}" class="form-control border-3" required></p>
             <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-danger">Last name error</p>
+
             <p>Date of birth: <input type="date" th:field="*{birthDay}" class="form-control border-3" required></p>
             <p th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}" class="text-danger">BirthDay error</p>
             <p>Email: <input type="email" th:field="*{email}" class="form-control border-3" required></p>

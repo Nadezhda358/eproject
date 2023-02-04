@@ -25,6 +25,11 @@ public class OrganizationController {
         organizationRepository.save(organization);
         return "organization-events";
     }
+    //@PostMapping("/submit")
+    //private String createEvent(Organization organization, Model model){
+    //    model.addAttribute(organization);
+    //}
+
     @GetMapping("/create")
     private String createOrganization(Model model) {
         Organization organization = new Organization();

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src=https://code.jquery.com/jquery-3.6.0.js></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Създай събитие</h1>
+        <form action="#" th:action="@{/event/submit}" method="post" th:object="${event}" class="col-md-6">
+            <p>Име на събитието: <input type="text" th:field="*{eventTitle}" class="form-control border-3" required></p>
+            <p th:if="${#fields.hasErrors('eventTitle')}" th:errors="*{eventTitle}" class="text-danger">Event title error</p>
+            <p>Описание: <input type="text" th:field="*{eventDescription}" class="form-control border-3" required></p>
+            <p th:if="${#fields.hasErrors('eventDescription')}" th:errors="*{eventDescription}" class="text-danger">Event description error</p>
+            <p>Краен срок за записване: <input type="date" th:field="*{endDate}" class="form-control border-3" required></p>
+            <p th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" class="text-danger">endDate error</p>
+            <p>Линк за повече информация: <input type="text" th:field="*{eventLink}" class="form-control border-3"></p>
+            <p th:if="${#fields.hasErrors('eventLink')}" th:errors="*{eventLink}" class="text-danger">Event link error</p>
+            <p>Място: <input type="text" th:field="*{place}" class="form-control border-3" required></p>
+            <p th:if="${#fields.hasErrors('place')}" th:errors="*{place}" class="text-danger">Place error</p>
+
+            <input type="submit" value="Save" class="btn btn-outline-success">
+            <a href="organization-events" class="btn btn-outline-secondary">Back</a>
+
+        </form>
+    </div>
+</body>
+</html>

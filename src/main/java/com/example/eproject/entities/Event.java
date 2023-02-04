@@ -11,7 +11,8 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
-    private Integer idOrganization;
+    @ManyToOne
+    private Organization organization;
     private String eventTitle;
     private String eventDescription;
     private Date postDate;

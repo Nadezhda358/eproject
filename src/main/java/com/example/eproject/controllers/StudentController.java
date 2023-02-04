@@ -19,7 +19,7 @@ public class StudentController {
     @PostMapping("/submit")
     private String saveStudents(@Valid Student student, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
-            return "create";
+            return "sign-in-student";
         }
         studentRepository.save(student);
         //return "redirect:/student-events";

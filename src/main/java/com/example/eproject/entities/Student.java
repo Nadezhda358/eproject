@@ -1,10 +1,7 @@
 package com.example.eproject.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -21,17 +18,26 @@ public class Student {
     private String secondName;
     @Size(min=2, max=30)
     private String lastName;
-    //@Past
-    //@DateTimeFormat(pattern = "dd-mm-yyyy")
+    @Past
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date birthDay;
     @Email
     private String email;
-    @Max(15)
+    @Size(min=3, max=15)
     private String phoneNumber;
     @Size(min=2, max=300)
     private String description;
     //photo
+    @Size(min=2, max=30)
+    private String town;
 
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
 
     public Integer getId() {
         return id;

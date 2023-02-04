@@ -23,8 +23,7 @@ public class OrganizationController {
             return "sign-in-organization";
         }
         organizationRepository.save(organization);
-        //return "redirect:/student-events";
-        return "redirect:/choose-role";
+        return "organization-events";
     }
     @GetMapping("/create")
     private String createOrganization(Model model) {

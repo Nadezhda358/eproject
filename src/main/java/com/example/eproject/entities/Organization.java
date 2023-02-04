@@ -1,5 +1,7 @@
 package com.example.eproject.entities;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "organizations")
@@ -7,10 +9,15 @@ public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Size(min=2, max=30)
     private String title;
+    @Size(min=2, max=50)
     private String address;
+    @Size(min=2, max=300)
     private String description;
+    @Email
     private String email;
+    @Size(min=3, max=15)
     private String phoneNumber;
     private boolean isVerified;
 

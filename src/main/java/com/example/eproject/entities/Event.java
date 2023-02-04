@@ -15,6 +15,9 @@ public class Event {
     private String eventTitle;
     private String eventDescription;
     private Date postDate;
+    //@ManyToOne
+    //OpportunityType opportunityType;
+    private String opportunity;
     public Integer getId() {
         return id;
     }

@@ -11,7 +11,16 @@
           crossorigin="anonymous">
 </head>
 <body>
-    <p th:text="${event}"></p>
+<div class="container">
+    <h1 th:text="${event.eventTitle}"></h1>
+    <p th:text="${event.organization.title}"></p>
+    <p>Дата на качване: <span th:text="${event.postDate}"></span></p>
+    <p>Краен срок за записване: <span th:text="${event.endDate}"></span></p>
+    <p>Описание: <span th:text="${event.eventDescription}"></span></p>
+    <p>Място: <span th:text="${event.place}"></span></p>
+    <p>За повече информация вижте <a th:href="${event.eventLink}">тук</a></p>
+
     <a href="/event/all-events" class="btn btn-outline-secondary">Back</a>
+</div>
 </body>
 </html>

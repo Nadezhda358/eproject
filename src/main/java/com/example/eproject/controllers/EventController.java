@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Optional;
 
 
 @Controller
@@ -54,7 +55,15 @@ public class EventController {
     }
     @PostMapping("/more-info/{eventId}")
     private String moreMoreInfo(@PathVariable(name="eventId") Integer eventId, Model model) {
-        model.addAttribute("event", eventRepository.findById(eventId));
+        Optional<Event> oe = eventRepository.findById(eventId);
+        Event event;
+        if(oe.isPresent()) {
+            event = oe.get();
+        } else {
+            event = new Event();
+        }
+
+        model.addAttribute("event", event);
         return "event-info";
     }
 }

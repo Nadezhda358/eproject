@@ -39,10 +39,5 @@ public class StudentController {
         model.addAttribute("interests", interests);
         return "sign-in-student";
     }
-    @GetMapping("/all-students")
-    public String getAllStudents(Model model){
-        Iterable<Student> students = studentRepository.findAll();
-        model.addAttribute("students", students);
-        return "all-students";
-    }
+
 }

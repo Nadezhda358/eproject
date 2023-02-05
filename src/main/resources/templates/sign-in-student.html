@@ -31,6 +31,12 @@
             <p>Описание: <input type="text" th:field="*{description}" class="form-control border-3" required></p>
             <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger">Description error</p>
 
+            <!--<form th:action="@{/studentInterest/saveInterest/{interestId}(interestId=${interest.id})/{studentId}(studentId=${student.id})}" method="post">
+                <div th:each="interest : ${interests}">
+                    <p><input type="checkbox" value=${interest.interestName} ></p>
+                </div>
+            </form>-->
+
             <input type="submit" value="Save" class="btn btn-outline-success">
             <a href="/choose-role" class="btn btn-outline-secondary">Back</a>
         </form>

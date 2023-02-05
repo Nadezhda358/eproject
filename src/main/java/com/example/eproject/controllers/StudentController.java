@@ -1,6 +1,10 @@
 package com.example.eproject.controllers;
 
+import com.example.eproject.entities.Event;
+import com.example.eproject.entities.Interest;
+import com.example.eproject.entities.Organization;
 import com.example.eproject.entities.Student;
+import com.example.eproject.repositories.InterestRepository;
 import com.example.eproject.repositories.StudentRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StudentController {
     @Autowired
     StudentRepository studentRepository;
+    @Autowired
+    InterestRepository interestRepository;
     @PostMapping("/submit")
     private String saveStudents(@Valid Student student, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
@@ -23,12 +29,14 @@ public class StudentController {
         }
         studentRepository.save(student);
         //return "redirect:/student-events";
-        return "redirect:/choose-role";
+        return "redirect:/event/all-events-student";
     }
     @GetMapping("/create")
     private String createStudent(Model model) {
         Student student = new Student();
         model.addAttribute("student", student);
+        Iterable<Interest> interests = interestRepository.findAll();
+        model.addAttribute("interests", interests);
         return "sign-in-student";
     }
 }

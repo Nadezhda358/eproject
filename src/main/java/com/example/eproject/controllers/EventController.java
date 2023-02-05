@@ -44,6 +44,12 @@ public class EventController {
         model.addAttribute("events", events);
         return "all-events";
     }
+    @GetMapping("/all-events-student")
+    public String getAllAEventsStudent(Model model){
+        Iterable<Event> events = eventRepository.findAll();
+        model.addAttribute("events", events);
+        return "all-events-student";
+    }
     @PostMapping("/more-info/{eventId}")
     private String moreMoreInfo(@PathVariable(name="eventId") Integer eventId, Model model) {
         model.addAttribute("event", eventRepository.findById(eventId));

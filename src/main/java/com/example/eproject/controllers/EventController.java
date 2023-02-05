@@ -1,6 +1,7 @@
 package com.example.eproject.controllers;
 
 import com.example.eproject.entities.Event;
+import com.example.eproject.entities.Organization;
 import com.example.eproject.repositories.EventRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Optional;
 
 
 @Controller
@@ -23,9 +25,10 @@ public class EventController {
     @Autowired
     EventRepository eventRepository;
     @GetMapping("/create")
-    private String createEvent(Model model) {
+    private String createEvent(Model model){//, Organization organization) {
         Event event = new Event();
         model.addAttribute("event", event);
+        //model.addAttribute(organization);
         return "add-event";
     }
     @PostMapping("/submit")
@@ -52,7 +55,15 @@ public class EventController {
     }
     @PostMapping("/more-info/{eventId}")
     private String moreMoreInfo(@PathVariable(name="eventId") Integer eventId, Model model) {
-        model.addAttribute("event", eventRepository.findById(eventId));
+        Optional<Event> oe = eventRepository.findById(eventId);
+        Event event;
+        if(oe.isPresent()) {
+            event = oe.get();
+        } else {
+            event = new Event();
+        }
+
+        model.addAttribute("event", event);
         return "event-info";
     }
 }

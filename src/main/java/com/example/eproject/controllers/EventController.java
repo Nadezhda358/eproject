@@ -1,6 +1,7 @@
 package com.example.eproject.controllers;
 
 import com.example.eproject.entities.Event;
+import com.example.eproject.entities.Organization;
 import com.example.eproject.repositories.EventRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,10 @@ public class EventController {
     @Autowired
     EventRepository eventRepository;
     @GetMapping("/create")
-    private String createEvent(Model model) {
+    private String createEvent(Model model){//, Organization organization) {
         Event event = new Event();
         model.addAttribute("event", event);
+        //model.addAttribute(organization);
         return "add-event";
     }
     @PostMapping("/submit")

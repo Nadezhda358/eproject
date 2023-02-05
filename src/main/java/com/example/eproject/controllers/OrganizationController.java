@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 @Controller
 @RequestMapping("/organization")
 public class OrganizationController {
@@ -34,6 +37,16 @@ public class OrganizationController {
     private String showYourEvents(Organization organization, Model model){
         model.addAttribute("organization", organization);
         Iterable<Event> events = eventRepository.findAll();
+        //ArrayList<Event> organizationEvents = new ArrayList<>();
+//
+        //for (Event event : events)
+        //{
+        //    if (event.getOrganization().getId().equals(organization.getId()))
+        //    {
+        //        organizationEvents.add(event);
+        //    }
+        //}
+        //model.addAttribute("organizationEvents", organizationEvents);
         model.addAttribute("events", events);
         return "organization-events";
     }

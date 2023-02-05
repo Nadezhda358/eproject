@@ -36,5 +36,5 @@ li a:hover:not(.active) {
 .card {
     display:inline-block;
     margin-bottom: 50px;
-    background-color: #63DBB1;
+    background-color: white;
 }

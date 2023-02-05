@@ -1,8 +1,7 @@
 package com.example.eproject.controllers;
 
-import com.example.eproject.entities.Event;
+
 import com.example.eproject.entities.Interest;
-import com.example.eproject.entities.Organization;
 import com.example.eproject.entities.Student;
 import com.example.eproject.repositories.InterestRepository;
 import com.example.eproject.repositories.StudentRepository;

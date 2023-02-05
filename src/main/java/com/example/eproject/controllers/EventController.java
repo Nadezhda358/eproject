@@ -34,7 +34,7 @@ public class EventController {
     @PostMapping("/submit")
     private String saveEvents(@Valid Event event, BindingResult bindingResult){
 
-        if (bindingResult.hasErrors()){// || LocalDate.now().isAfter(event.getEndDate())) {
+        if (bindingResult.hasErrors()){
             return "add-event";
         }
         event.setPostDate(LocalDate.now());

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -30,6 +31,7 @@ public class Student {
     //photo
     @Size(min=2, max=30)
     private String town;
+    //private int age = setAge();
 
     public String getTown() {
         return town;
@@ -102,4 +104,12 @@ public class Student {
     public void setDescription(String description) {
         this.description = description;
     }
+    //public int setAge(){
+    //    return (LocalDate.now().getYear()-this.birthDay.getYear());
+    //}
+
+    //public int getAge() {
+    //    return age;
+    //}
+
 }
